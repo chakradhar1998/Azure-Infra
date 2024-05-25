@@ -1,9 +1,5 @@
 provider "azurerm" {
-  features = {
-    resource_group {
-      prevent_deletion_if_contains_resources = false
-    }
-  }
+  features = {}
 }
 
 # Set the Azure Provider source and version being used
