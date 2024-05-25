@@ -1,5 +1,5 @@
 
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroup"
+  name     = "tfresource"
   location = "westus2"
 }
