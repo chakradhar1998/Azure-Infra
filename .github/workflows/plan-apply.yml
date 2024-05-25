@@ -18,8 +18,8 @@ env:
 
 
 jobs:
-  terraform:
-    name: 'Terraform'
+  apply:
+    name: 'Plan_Apply'
 
     runs-on: ubuntu-latest
     environment: production
