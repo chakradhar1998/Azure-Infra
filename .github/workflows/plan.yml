@@ -1,7 +1,8 @@
 
 name: 'Terraform'
 
-run-name: Plan-${{ github.short_sha }}-${{ github.actor }}
+run-name: Plan-${{ github.sha }}-${{ github.actor }}
+
 
 on:
   push:
