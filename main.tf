@@ -39,6 +39,19 @@ resource "azurerm_network_interface" "appinterface" {
   depends_on = [azurerm_subnet.subnetA]
 }
 
+resource "azurerm_network_interface" "appinterface2" {
+  name                = "appinterface2"
+  location            = local.location
+  resource_group_name = local.resource_group_name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.subnetA.id
+    private_ip_address_allocation = "Dynamic"
+  }
+  depends_on = [ azurerm_subnet.subnetA ]
+}
+
 resource "azurerm_public_ip" "appip" {
   name                = "app-ip"
   resource_group_name = local.resource_group_name
