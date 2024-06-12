@@ -94,7 +94,7 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   size                = "Standard_D2s_v3"
   admin_username      = "adminuser"
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.appinterface.id,
   ]
 
   admin_ssh_key {
