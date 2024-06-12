@@ -1,3 +1,5 @@
+# Provider block is first configured when writing any tf code.
+
 terraform {
   required_providers {
     azurerm = {
