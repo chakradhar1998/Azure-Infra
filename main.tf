@@ -67,7 +67,7 @@ resource "azurerm_network_security_group" "appnsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  depends_on = [ azurerm_resource_group.appgrp ]
+  depends_on = [azurerm_resource_group.appgrp]
 }
 
 resource "azurerm_subnet_network_security_group_association" "appnsglink" {
