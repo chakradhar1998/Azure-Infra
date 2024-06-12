@@ -1,6 +1,8 @@
 
 name: 'Terraform Apply'
 
+run-name: Apply-${{ github.sha }}-${{ github.actor }}
+
 on:
   workflow_dispatch:
 
