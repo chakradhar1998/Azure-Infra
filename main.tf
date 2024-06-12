@@ -18,5 +18,5 @@ resource "azurerm_virtual_network" "appnetwork" {
     name           = "subnetB"
     address_prefix = "10.0.1.0/24"
   }
-  depends_on = [ azurerm_resource_group.appgrp ]
+  depends_on = [azurerm_resource_group.appgrp]
 }
