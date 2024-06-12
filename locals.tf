@@ -1,4 +1,4 @@
 locals {
-  resource_group_name= "app-grp"
-  location= "westus2"
+  resource_group_name = "app-grp"
+  location            = "westus2"
 }
