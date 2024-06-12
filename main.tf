@@ -10,7 +10,7 @@ resource "azurerm_virtual_network" "appnetwork" {
   address_space       = [local.virtual_network.address_space]
   depends_on          = [azurerm_resource_group.appgrp]
 }
-/*
+
 resource "azurerm_subnet" "subnetA" {
   name                 = local.subnet[0].name
   resource_group_name  = local.resource_group_name
@@ -25,4 +25,3 @@ resource "azurerm_subnet" "subnetB" {
   address_prefixes     = [local.subnet[1].address_prefix]
 }
 
-*/
