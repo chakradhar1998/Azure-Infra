@@ -37,3 +37,12 @@ resource "azurerm_network_interface" "appinterface" {
   }
   depends_on = [azurerm_subnet.subnetA]
 }
+
+# resource "azurerm_public_ip" "example" {
+#   name                = "acceptanceTestPublicIp1"
+#   resource_group_name = local.resource_group_name
+#   location            = local.location
+#   allocation_method   = "Dynamic"
+
+
+# }
