@@ -3,28 +3,19 @@ resource "azurerm_resource_group" "appgrp" {
   location = "westus2"
 }
 
-resource "azurerm_storage_account" "appstore2278370" {
-  name                     = "appstore2278370"
-  resource_group_name      = azurerm_resource_group.appgrp.name
-  location                 = azurerm_resource_group.appgrp.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  account_kind             = "StorageV2"
-  depends_on               = [azurerm_resource_group.appgrp]
-}
+resource "azurerm_virtual_network" "appnetwork" {
+  name                = "app-network"
+  location            = azurerm_resource_group.appgrp.location
+  resource_group_name = azurerm_resource_group.appgrp.name
+  address_space       = ["10.0.0.0/16"]
 
-resource "azurerm_storage_container" "data" {
-  name                  = "data"
-  storage_account_name  = azurerm_storage_account.appstore2278370.name
-  container_access_type = "blob"
-  depends_on            = [azurerm_storage_account.appstore2278370]
-}
+  subnet {
+    name           = "subnetA"
+    address_prefix = "10.0.0.0/24"
+  }
 
-resource "azurerm_storage_blob" "maintf" {
-  name                   = "main.tf"
-  storage_account_name   = azurerm_storage_account.appstore2278370.name
-  storage_container_name = azurerm_storage_container.data.name
-  type                   = "Block"
-  source                 = "main.tf"
-  depends_on             = [azurerm_storage_container.data]
+  subnet {
+    name           = "subnetB"
+    address_prefix = "10.0.1.0/24"
+  }
 }
