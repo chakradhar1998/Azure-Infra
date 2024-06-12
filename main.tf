@@ -34,7 +34,7 @@ resource "azurerm_network_interface" "appinterface" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnetA.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.appip.id
+    public_ip_address_id          = azurerm_public_ip.appip.id
   }
   depends_on = [azurerm_subnet.subnetA]
 }
@@ -48,5 +48,5 @@ resource "azurerm_public_ip" "appip" {
   lifecycle {
     create_before_destroy = true
   }
-  depends_on = [ local.resource_group_name ]
+  depends_on = [local.resource_group_name]
 }
