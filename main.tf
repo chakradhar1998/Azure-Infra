@@ -1,12 +1,12 @@
 resource "azurerm_resource_group" "appgrp" {
-  name     = "app-grp"
-  location = "westus2"
+  name     = local.resource_group_name
+  location = local.location
 }
 
 resource "azurerm_virtual_network" "appnetwork" {
   name                = "app-network"
-  location            = azurerm_resource_group.appgrp.location
-  resource_group_name = azurerm_resource_group.appgrp.name
+  location            = local.location
+  resource_group_name = local.resource_group_name
   address_space       = ["10.0.0.0/16"]
 
   subnet {
