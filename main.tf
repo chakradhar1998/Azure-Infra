@@ -1,3 +1,4 @@
+/*
 resource "azurerm_resource_group" "appgrp" {
   name     = "app-grp"
   location = "westus2"
@@ -24,4 +25,4 @@ resource "azurerm_storage_blob" "maintf" {
   storage_container_name = azurerm_storage_container.data.name
   type                   = "Block"
   source                 = "main.tf"
-}
+}*/
