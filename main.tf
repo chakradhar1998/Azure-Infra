@@ -25,3 +25,15 @@ resource "azurerm_subnet" "subnetB" {
   address_prefixes     = [local.subnet[1].address_prefix]
 }
 
+resource "azurerm_network_interface" "appinterface" {
+  name                = "appinterface"
+  location            = local.location
+  resource_group_name = local.resource_group_name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.subnetA.id
+    private_ip_address_allocation = "Dynamic"
+  }
+  depends_on = [azurerm_subnet.subnetA]
+}
