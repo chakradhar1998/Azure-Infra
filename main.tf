@@ -9,5 +9,5 @@ resource "azurerm_storage_account" "appstore2278370" {
   location                 = azurerm_resource_group.appgrp.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  access_tier = "StorageV2"
+  access_tier              = "StorageV2"
 }
