@@ -4,10 +4,10 @@ resource "azurerm_resource_group" "appgrp" {
 }
 
 resource "azurerm_virtual_network" "appnetwork" {
-  name                = "app-network"
+  name                = local.virtual_network.name
   location            = local.location
   resource_group_name = local.resource_group_name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = [local.virtual_network.address_space]
 
   subnet {
     name           = "subnetA"
