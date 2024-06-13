@@ -8,9 +8,9 @@ resource "azurerm_virtual_network" "appnetwork" {
 
 resource "azurerm_subnet" "subnets" {
   count                = var.number_of_subnets
-  name                 = local.subnet[count.index].name
+  name                 = "Subnet${count.index}"
   resource_group_name  = local.resource_group_name
   virtual_network_name = local.virtual_network.name
-  address_prefixes     = [local.subnet[count.index].address_prefix]
+  address_prefixes     = ["10.0.${count.index}.0/24"]
   depends_on           = [azurerm_virtual_network.appnetwork]
 }
