@@ -10,15 +10,15 @@ resource "azurerm_storage_account" "appstore2278370" {
   location                 = local.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  account_kind = "StorageV2"
-  depends_on = [ azurerm_resource_group.appgrp ]
+  account_kind             = "StorageV2"
+  depends_on               = [azurerm_resource_group.appgrp]
 
 }
 
 resource "azurerm_storage_container" "data" {
-  for_each = toset[ "data","files","documents" ]
+  for_each              = toset(["data", "files", "documents"])
   name                  = each.key
   storage_account_name  = azurerm_storage_account.appstore2278370.name
   container_access_type = "blob"
-  depends_on = [ azurerm_storage_account.appstore2278370 ]
+  depends_on            = [azurerm_storage_account.appstore2278370]
 }
