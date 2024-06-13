@@ -1,1 +1,1 @@
-number_of_subnets = 6
+number_of_subnets = 3
