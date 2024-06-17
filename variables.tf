@@ -14,3 +14,9 @@ variable "number_of_machines" {
   description = "This defines number of VM"
   default     = 2
 }
+
+variable "storage_account_name" {
+  type        = string
+  description = "The tfvars storage account name"
+
+}
