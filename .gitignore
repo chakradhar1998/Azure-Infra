@@ -8,3 +8,6 @@
 # Crash log files
 crash.log
 crash.*.log
+
+# Ignore transient lock info files created by terraform apply
+.terraform.lock.hcl

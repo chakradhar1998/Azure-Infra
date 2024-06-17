@@ -15,3 +15,8 @@ variable "number_of_machines" {
   default     = 2
 }
 
+variable "subscription_id" {
+  type = string
+  description = "subscription id"
+  
+}
