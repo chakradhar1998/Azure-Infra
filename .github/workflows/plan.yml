@@ -15,13 +15,21 @@ permissions:
 env:
   ARM_CLIENT_ID: ${{ secrets.APP_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.SPN_PASS }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.TENANT }}
   TF_VERSION: 1.8.0
 
 
 jobs:
   apply:
+    strategy:
+      matrix:
+        include:
+          - subscription_id: "55b24198-da47-4df9-a82d-aa987405a685"
+          - subscription_id: "62c3872c-6679-48dc-8f52-a023c76c87b4"
+    env:
+      Greeting: Hello
+      
+
     name: 'Plan'
 
     runs-on: ubuntu-latest
@@ -35,6 +43,10 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: Set up Azure credentials
+      run: |
+        echo "ARM_SUBSCRIPTION_ID=${{ matrix.subscription_id }}" >> $GITHUB_ENV
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
