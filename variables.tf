@@ -15,8 +15,3 @@ variable "number_of_machines" {
   default     = 2
 }
 
-variable "storage_account_name" {
-  type        = string
-  description = "The tfvars storage account name"
-
-}
