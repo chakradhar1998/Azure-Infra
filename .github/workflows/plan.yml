@@ -15,7 +15,7 @@ permissions:
 env:
   ARM_CLIENT_ID: ${{ secrets.APP_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.SPN_PASS }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  #ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.TENANT }}
   TF_VERSION: 1.8.0
 
