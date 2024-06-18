@@ -39,6 +39,6 @@ resource "azurerm_network_security_group" "appnsg" {
 resource "azurerm_subnet_network_security_group_association" "appnsglink" {
   count                     = var.number_of_subnets
   subnet_id                 = azurerm_subnet.subnets[count.index].id
-  network_security_group_id = azurerm_network_security_group.appnsg.id
+  network_security_group_id = azurerm_network_security_group.appnsg[count.index].id
   depends_on                = [azurerm_virtual_network.appnetwork, azurerm_network_security_group.appnsg]
 }
