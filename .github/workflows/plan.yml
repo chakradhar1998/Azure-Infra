@@ -1,7 +1,7 @@
 
-name: 'Terraform'
+name: 'Terraform-PAYG'
 
-run-name: Plan-${{ github.sha }}-${{ github.actor }}
+run-name: PAYG-Plan-${{ github.sha }}-${{ github.actor }}
 
 
 on:

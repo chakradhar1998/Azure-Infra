@@ -1,7 +1,7 @@
 
-name: 'Terraform'
+name: 'Terraform-Sponsered'
 
-run-name: Plan-${{ github.sha }}-${{ github.actor }}
+run-name: Sponsered-Plan-${{ github.sha }}-${{ github.actor }}
 
 
 on:
