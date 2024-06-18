@@ -20,3 +20,10 @@ variable "subscription_id" {
   description = "subscription id"
 
 }
+
+variable "create-vnet" {
+  type = bool
+  description = "Will be used to deploy vnet on the required subscription"
+  default = 0
+  
+}
