@@ -16,7 +16,7 @@ variable "number_of_machines" {
 }
 
 variable "subscription_id" {
-  type = string
+  type        = string
   description = "subscription id"
-  
+
 }
