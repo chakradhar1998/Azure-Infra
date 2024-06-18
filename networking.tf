@@ -1,5 +1,5 @@
 resource "azurerm_virtual_network" "appnetwork" {
-    count = var.create-vnet ? 1:0
+  count               = var.create-vnet ? 1 : 0
   name                = local.virtual_network.name
   location            = local.location
   resource_group_name = local.resource_group_name
@@ -17,7 +17,7 @@ resource "azurerm_subnet" "subnets" {
 }
 
 resource "azurerm_network_security_group" "appnsg" {
-    count = var.create-nsg ? 1:0
+  count               = var.create-nsg ? 1 : 0
   name                = "app-nsg"
   location            = local.location
   resource_group_name = local.resource_group_name

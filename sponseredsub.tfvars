@@ -1,5 +1,5 @@
 subscription_id    = "62c3872c-6679-48dc-8f52-a023c76c87b4"
-create-vnet = true
+create-vnet        = true
 number_of_subnets  = 3
-create-nsg = true
+create-nsg         = true
 number_of_machines = 3

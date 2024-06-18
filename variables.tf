@@ -22,15 +22,15 @@ variable "subscription_id" {
 }
 
 variable "create-vnet" {
-  type = bool
+  type        = bool
   description = "Will be used to deploy vnet on the required subscription"
-  default = false
-  
+  default     = false
+
 }
 
 variable "create-nsg" {
-  type = bool
+  type        = bool
   description = "Will be used to deploy nsg to the subscriptions"
-  default = false
-  
+  default     = false
+
 }
