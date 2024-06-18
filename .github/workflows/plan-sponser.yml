@@ -91,6 +91,6 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Apply
-      run: terraform apply -input=false -var-file sponseredsub.tfvars
+      run: terraform apply -auto-approve -var-file sponseredsub.tfvars
 
 
