@@ -7,14 +7,14 @@ resource "azurerm_virtual_network" "appnetwork" {
   depends_on          = [azurerm_resource_group.appgrp]
 }
 
-# resource "azurerm_subnet" "subnets" {
-#   count                = var.number_of_subnets
-#   name                 = "Subnet${count.index}"
-#   resource_group_name  = local.resource_group_name
-#   virtual_network_name = local.virtual_network.name
-#   address_prefixes     = ["10.0.${count.index}.0/24"]
-#   depends_on           = [azurerm_virtual_network.appnetwork]
-# }
+resource "azurerm_subnet" "subnets" {
+  count                = var.number_of_subnets
+  name                 = "Subnet${count.index}"
+  resource_group_name  = local.resource_group_name
+  virtual_network_name = local.virtual_network.name
+  address_prefixes     = ["10.0.${count.index}.0/24"]
+  depends_on           = [azurerm_virtual_network.appnetwork]
+}
 
 # resource "azurerm_network_security_group" "appnsg" {
 #   name                = "app-nsg"
