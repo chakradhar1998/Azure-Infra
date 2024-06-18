@@ -27,3 +27,10 @@ variable "create-vnet" {
   default = false
   
 }
+
+variable "create-nsg" {
+  type = bool
+  description = "Will be used to deploy nsg to the subscriptions"
+  default = false
+  
+}
