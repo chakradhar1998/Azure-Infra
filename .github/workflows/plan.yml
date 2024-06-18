@@ -59,6 +59,8 @@ jobs:
       run: terraform plan -input=false -var-file terraform.tfvars
   apply:
     name: 'Apply'
+    needs:
+      - plan
 
     runs-on: ubuntu-latest
 
