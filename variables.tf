@@ -12,7 +12,7 @@ variable "number_of_subnets" {
 variable "number_of_machines" {
   type        = number
   description = "This defines number of VM"
-  default     = 2
+  default     = 0
 }
 
 variable "subscription_id" {
