@@ -20,4 +20,5 @@ module "subnets" {
   vnetname = var.vnetname
   subnetname = "subnet${count.index}"
   address_prefix = ["10.0.${count.index}.0/24"]
+  depends_on = [ module.basic-network ]
 }
