@@ -6,26 +6,22 @@ variable "subscription_id" {
 
 variable "resource_group_name" {
   description = "Resource group name"
-  default     = "app-grp"
-
+  default = "app-grp"
+  
 }
 
 variable "location" {
   description = "Resource group location"
-  default     = "westus2"
+  default = "westus2"
+}
+
+variable "create_vnet" {
+  type = bool
+  default = false
 }
 
 variable "vnetname" {
   description = "Virtual network name"
-}
-
-
-
-variable "create-vnet" {
-  type        = bool
-  description = "Will be used to deploy vnet on the required subscription"
-  default     = false
-
 }
 
 # variable "subnetname" {
