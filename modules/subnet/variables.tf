@@ -3,11 +3,6 @@ variable "resource_group_name" {
   
 }
 
-variable "location" {
-  type = string
-  description = "Resource group location"
-}
-
 variable "vnetname" {
   description = "Virtual network name"
 }
