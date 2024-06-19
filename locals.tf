@@ -1,8 +1,6 @@
-locals {
-  resource_group_name = "app-grp"
-  location            = "westus2"
-  virtual_network = {
-    name          = "app-network"
-    address_space = "10.0.0.0/16"
-  }
-}
+# locals {
+#   virtual_network = {
+#     name          = "app-network"
+#     address_space = "10.0.0.0/16"
+#   }
+# }
