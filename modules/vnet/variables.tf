@@ -11,6 +11,7 @@ variable "location" {
 variable "vnetname" {
   type = string
   description = "Virtual network name"
+  default = ""
 }
 
 variable "address_space" {
