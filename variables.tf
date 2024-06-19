@@ -25,13 +25,11 @@ variable "vnetname" {
   default = ""
 }
 
-# variable "subnetname" {
-#   description = "The subnet name to be used"
-# }
+variable "no_of_subnets" {
+  type = number
+  default = 0
+}
 
-# variable "address_prefix" {
-#   description = "Address prefix of the subnet"
-# }
 
 # variable "create-nsg" {
 #   type        = bool

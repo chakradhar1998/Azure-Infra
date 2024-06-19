@@ -10,4 +10,14 @@ module "basic-network" {
   resource_group_name = var.resource_group_name
   location            = var.location
   vnetname            = var.vnetname
+  depends_on = [ module.rg ]
+}
+
+module "subnets" {
+  count = var.no_of_subnets
+  source = "./modules/subnet"
+  resource_group_name = var.resource_group_name
+  vnetname = var.vnetname
+  subnetname = "subnet${count.index}"
+  address_prefix = ["10.0.${count.index}.0/24"]
 }
