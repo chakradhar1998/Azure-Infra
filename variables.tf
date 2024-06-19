@@ -20,6 +20,10 @@ variable "create_vnet" {
   default = false
 }
 
+variable "vnetname" {
+  type = string
+  default = ""
+}
 
 # variable "subnetname" {
 #   description = "The subnet name to be used"
