@@ -31,7 +31,7 @@ resource "azurerm_windows_virtual_machine" "appvm" {
   name                = "appvm${count.index}"
   resource_group_name = local.resource_group_name
   location            = local.location
-  size                = "Standard_D2S_v3"
+  size                = "Standard_D2s_v3"
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
