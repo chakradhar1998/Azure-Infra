@@ -20,9 +20,6 @@ variable "create_vnet" {
   default = false
 }
 
-variable "vnetname" {
-  description = "Virtual network name"
-}
 
 # variable "subnetname" {
 #   description = "The subnet name to be used"
