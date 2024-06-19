@@ -13,18 +13,18 @@ resource "azurerm_network_interface" "appinterface" {
   depends_on = [azurerm_subnet.subnets, azurerm_public_ip.appip]
 }
 
-# resource "azurerm_public_ip" "appip" {
-#   count               = var.number_of_machines
-#   name                = "app-ip${count.index}"
-#   resource_group_name = local.resource_group_name
-#   location            = local.location
-#   allocation_method   = "Dynamic"
+resource "azurerm_public_ip" "appip" {
+  count               = var.number_of_machines
+  name                = "app-ip${count.index}"
+  resource_group_name = local.resource_group_name
+  location            = local.location
+  allocation_method   = "Dynamic"
 
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-#   depends_on = [local.resource_group_name]
-# }
+  lifecycle {
+    create_before_destroy = true
+  }
+  depends_on = [local.resource_group_name]
+}
 
 # resource "azurerm_windows_virtual_machine" "appvm" {
 #   count               = var.number_of_machines
