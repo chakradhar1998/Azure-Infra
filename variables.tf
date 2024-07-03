@@ -40,6 +40,7 @@ variable "create-nsg" {
 
 variable "nsg_name" {
   type = string
+  default = ""
 }
 
 # variable "security_rule" {
