@@ -34,9 +34,10 @@ module "nsgs" {
 }
 
 module "nsgrule" {
-  count               = var.create-nsg == true ? 1 : 0  
-  source = "./modules/nsg-rule"
-  nsg_name = var.nsg_name
+  count               = var.create-nsg == true ? 1 : 0
+  source              = "./modules/nsg-rule"
+  nsg_name            = var.nsg_name
   resource_group_name = var.resource_group_name
-  nsgrule = var.security_rule
+  nsgrule             = var.security_rule
+  depends_on          = [module.nsgs]
 }
