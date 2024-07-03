@@ -22,3 +22,11 @@ module "subnets" {
   address_prefix = ["10.0.${count.index}.0/24"]
   depends_on = [ module.basic-network ]
 }
+
+module "nsgs" {
+  count = var.create-nsg == true ? 1:0
+  source = "./modules/nsg"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  security_rule = var.security_rule
+}
