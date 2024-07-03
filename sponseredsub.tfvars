@@ -3,19 +3,19 @@ create_vnet     = true
 vnetname        = "app-network"
 no_of_subnets   = 3
 create-nsg      = true
-nsg_name = "app-nsg1"
+nsg_name        = "app-nsg1"
 
-# security_rule = {
-#   "rule1" = {
-#     name                       = "test123"
-#     priority                   = 100
-#     direction                  = "Inbound"
-#     access                     = "Allow"
-#     protocol                   = "Tcp"
-#     source_port_range          = "*"
-#     destination_port_range     = "*"
-#     source_address_prefix      = "*"
-#     destination_address_prefix = "*"
 
-#   }
-# }
+security_rule = {
+  "rule1" = {
+    name                       = "test123"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}

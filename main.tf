@@ -28,6 +28,15 @@ module "nsgs" {
   source              = "./modules/nsg"
   location            = var.location
   resource_group_name = var.resource_group_name
-  nsg_name = var.nsg_name
+  nsg_name            = var.nsg_name
+  depends_on          = [module.rg]
 
+}
+
+module "nsgrule" {
+  count               = var.create-nsg == true ? 1 : 0  
+  source = "./modules/nsg-rule"
+  nsg_name = var.nsg_name
+  resource_group_name = var.resource_group_name
+  nsgrule = var.security_rule
 }
