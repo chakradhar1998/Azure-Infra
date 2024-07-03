@@ -50,4 +50,5 @@ variable "security_rule" {
     source_address_prefix      = list(string)
     destination_address_prefix = list(string)
   }))
+  default     = {}
 }
