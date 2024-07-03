@@ -28,5 +28,6 @@ module "nsgs" {
   source              = "./modules/nsg"
   location            = var.location
   resource_group_name = var.resource_group_name
-  security_rule       = var.security_rule
+  nsg_name = var.nsg_name
+
 }
