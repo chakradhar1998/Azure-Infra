@@ -6,27 +6,27 @@ variable "subscription_id" {
 
 variable "resource_group_name" {
   description = "Resource group name"
-  default = "app-grp"
-  
+  default     = "app-grp"
+
 }
 
 variable "location" {
   description = "Resource group location"
-  default = "westus2"
+  default     = "westus2"
 }
 
 variable "create_vnet" {
-  type = bool
+  type    = bool
   default = false
 }
 
 variable "vnetname" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "no_of_subnets" {
-  type = number
+  type    = number
   default = 0
 }
 
@@ -45,10 +45,10 @@ variable "security_rule" {
     direction                  = string
     access                     = string
     protocol                   = string
-    source_port_range          = optional(string)
-    destination_port_range     = optional(string)
+    source_port_range          = string
+    destination_port_range     = string
     source_address_prefix      = string
     destination_address_prefix = string
   }))
-  default     = {}
+  default = {}
 }

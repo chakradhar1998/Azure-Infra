@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   description = "Resource group name"
-  
+
 }
 
 variable "vnetname" {
@@ -13,5 +13,5 @@ variable "subnetname" {
 
 variable "address_prefix" {
   description = "Address prefix of the subnet"
-  type = list(string)
+  type        = list(string)
 }
