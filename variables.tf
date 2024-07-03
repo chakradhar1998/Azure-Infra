@@ -47,8 +47,8 @@ variable "security_rule" {
     protocol                   = string
     source_port_range          = optional(string)
     destination_port_range     = optional(string)
-    source_address_prefix      = list(string)
-    destination_address_prefix = list(string)
+    source_address_prefix      = string
+    destination_address_prefix = string
   }))
   default     = {}
 }
